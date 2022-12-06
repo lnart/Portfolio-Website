@@ -2,6 +2,7 @@ const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controls'); //Parent container
 const sectBtn = document.querySelectorAll('.control') //Actual Button
 const allSections = document.querySelector('.main-content') // Body
+const mode = document.querySelector('.mode')
 
 
 //Buttton click active class
@@ -9,6 +10,7 @@ function PageTransitions(){
     //Loops through the toolbar
     for(let i = 0; i < sectBtn.length; i++){
         //listens for clickevent
+        if(!sectBtn[i].classList.contains('mode')){
         sectBtn[i].addEventListener('click', function() {
             //sets variable to element with active-btn selector
             let currentBtn = document.querySelectorAll('.active-btn')
@@ -17,6 +19,7 @@ function PageTransitions(){
             // adds class active-btn to the element the user clicked on 
             this.className += ' active-btn'
         })
+        }
     }
 
     //sections active class
@@ -43,3 +46,15 @@ function PageTransitions(){
 }
 
 PageTransitions()
+//sets Background color of Body to balck
+function Darkmode() {
+    mode.addEventListener('click', () => {
+        if(allSections.classList.contains('dark')){
+            allSections.classList.remove('dark')
+        }else{
+            allSections.classList.add('dark')
+        }
+    })
+}
+
+Darkmode()
