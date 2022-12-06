@@ -7,7 +7,7 @@
 
 :root{
     --color-primary: #191d2b;
-    --color-secondary: #27AE60;
+    --color-secondary: rgb(4, 217, 255);
     --color-white: #FFFFFF;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -64,27 +64,32 @@ section{
 .sec1{
     display: none;
     transform: translateY(0) scale(1);
-    background-color: yellow;
 }
 .sec2{
     display: none;
     transform: translateY(0) scale(1);
-    background-color: greenyellow;
+
 }
 .sec3{
     display: none;
     transform: translateY(0) scale(1);
-    background-color: slateblue;
+
 }
+
 .sec4{
     display: none;
     transform: translateY(0) scale(1);
-    background-color: blue;
+
 }
 .sec5{
     display: none;
     transform: translateY(0) scale(1);
-    background-color: orange;
+
+}
+
+.active{
+    display: block;
+    
 }
 
 .controls{
@@ -124,4 +129,50 @@ i{
     font-size: 1.2rem;
     color: var(--color-grey-2);
     pointer-events: none;
+}
+
+.dark{
+    background-color: #FFFFFF;
+    transition: all .4s ease-in-out
+}
+
+.header-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+}
+
+.left-header{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.h-shape{
+    width: 65%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+    position: absolute;
+    z-index: -1;
+}
+
+.image{
+    height: 90%;
+    width: 68%;
+    
+
+}
+
+.right-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 18rem;
+
+}
+
+span{
+    color: var(--color-secondary);
 }

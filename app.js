@@ -26,7 +26,7 @@ function PageTransitions(){
     allSections.addEventListener('click', (e) => {
         //sets variable to id of the clicked element
         const id = e.target.dataset.id;
-        if(id){
+        if(id || !e.classList.contains('mode')){
             //remove active from all buttons
             sectBtns.forEach((btn) => {
                 btn.classList.remove('active')
